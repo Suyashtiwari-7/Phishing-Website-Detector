@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Phishing Website Detector</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        body { font-family: Arial; text-align: center; padding: 50px; }
+        input { padding: 10px; width: 300px; }
+        button { padding: 10px 20px; }
+    </style>
+</head>
+<body>
+    <h2>🔐 Phishing Website Detector</h2>
+    <form method="POST">
+        <input name="url" type="text" placeholder="Enter URL..." required>
+        <button type="submit">Check</button>
+    </form>
+
+    {% if result %}
+        <h3>Result: {{ result }}</h3>
+        {{ plot_div | safe }}
+    {% endif %}
+</body>
+</html>
